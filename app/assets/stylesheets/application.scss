@@ -1,0 +1,28 @@
+@import 'bootstrap';
+@import 'bootstrap-sprockets';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: black;
+}
+
+.navbar > .flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 100px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  background-color: white;
+}

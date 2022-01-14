@@ -1,18 +1,28 @@
 class ImagesController < ApplicationController
-    def new
-      @image = Image.new
-    end
+  def index
+    @images = Image.order(created_at: :desc).limit(15)
+  end
 
-    def create
-      @image = current_user.images.build(image_params)
-      if @images.save
-        redirect_to image_path(@image.id), notice: 'Image uploaded!'
-      else
-        render :new
-      end
-    end
-  
-    def image_params
-      params.require(:image).permit(:image, :description)
+  def show
+    @image = Image.find(params[:id])
+  end
+
+  def new
+    @image = Image.new
+  end
+
+  def create
+    @image = current_user.images.build(image_params)
+    if @image.save
+      redirect_to @image, notice: 'Image uploaded!'
+    else
+      render :new
     end
   end
+
+  private
+
+  def image_params
+    params.require(:image).permit(:image, :description)
+  end
+end

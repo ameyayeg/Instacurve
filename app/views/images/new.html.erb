@@ -19,23 +19,4 @@
   </div>
 </div>
 
-<script>
-    var reader = new FileReader()
-    var form = document.querySelector('#new_image')
-    var field = document.querySelector('#image_image')
-    var preview = document.querySelector('#asdndz-image_image')
 
-    reader.onload = function(e) {
-      preview.style.backgroundImage = `url(${' + e.srcElement.result + '})`
-    }
-
-    field.addEventListener('dnd-upload:initialize', function(e) {
-      reader.readAsDataURL(e.detail.file)
-    }, false)
-
-    form.addEventListener('click', function(e) {
-      if (event.target.dataset.dndDelete === 'true') {
-        preview.style.backgroundImage = ''
-      }
-    }, true)
-</script>

@@ -11,12 +11,10 @@
 // about supported directives.
 
 
-window.ActiveStorageDragAndDrop = require('active_storage_drag_and_drop');
 require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
-
 
 
 //= require rails-ujs

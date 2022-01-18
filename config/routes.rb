@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  root 'images#index'
 
   devise_for :users
   devise_scope :user do
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   get '/upload', to: 'images#new'
-  resources :images, only: [:index, :show, :create]
+  resources :images, only: [:show, :create, :destroy, :index]
 
   get '/@:username', to: 'users#show', as: :profile
 end

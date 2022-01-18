@@ -4,9 +4,12 @@
   <% @images.each do |image| %>
     <div class="card">
       <div class="card-body p-1">
-        <%= image_tag image.image, class: 'd-block w-100 mb-1'%>
-        <%= link_to "View Image", image_path(image.id), class: 'btn btn-secondary stretched-link' %>
+        <%= image_tag image.image, loading: "lazy", width: "200px", class: 'd-block w-100 mb-1'%>
+        <p><%= link_to "View Image", image_path(image.id), class: 'btn btn-secondary stretched-link' %></p>
         <p class="my-1"><%= image.description %></p>
+        <% if current_user %>
+          <%= button_to "Delete", image_path(image.id), method: :delete %>
+        <% end %> 
       </div>
     </div>
   <% end %>

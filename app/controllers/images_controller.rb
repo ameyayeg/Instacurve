@@ -1,6 +1,10 @@
 class ImagesController < ApplicationController
+  
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
+
+
   def index
-    @images = Image.order(created_at: :desc).limit(15)
+    @images = Image.order(created_at: :desc)
   end
 
   def show
@@ -21,13 +25,14 @@ class ImagesController < ApplicationController
   end
 
   def destroy
-    image = Image.find(params[:id])
-    image.destroy
-  end  
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_back(fallback_location: "/"); 
+  end
+end
 
   private
 
   def image_params
     params.require(:image).permit(:image, :description)
   end
-end

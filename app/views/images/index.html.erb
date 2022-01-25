@@ -3,10 +3,10 @@
 <div class="card-columns">
   <% @images.each do |image| %>
     <div class="card">
-      <div class="card-body p-1">
-        <%= image_tag image.image, loading: "lazy", class: 'd-block w-100' %>
+      <div class="card-body flex">
+        <%= image_tag image.image, loading: "lazy", class: "gallery--image"%>
         <p class="my-1"><%= image.description %></p>
-        <%= link_to "View Image", image_path(image.id), class: 'btn btn-secondary stretched-link' %>
+        <%= link_to "View Image", image_path(image.id), class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>

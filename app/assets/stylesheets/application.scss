@@ -7,19 +7,27 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
 .navbar {
   background-color: black;
+  padding: 0 1em;
+  flex-direction: row;
 }
 
-.navbar > .flex {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 100px;
-}
-
-.navbar-brand {
-  font-weight: bold;
+.navbar > ul {
+  flex-direction: row;
+  gap: 1em;
 }
 
 .navbar-brand:hover,
@@ -27,43 +35,39 @@
   background-color: white;
 }
 
-.asdndzone {
-  background: #f2f2f2;
-  border-radius: 4px;
-  border-width: 5px;
-  border-style: dashed;
-  padding-top: 0;
-  min-height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-size: cover;
-  background-blend-mode: overlay;
-  background-position: center center;
+.navbar a {
+  margin-right: auto;
+  font-weight: 700;
 }
 
-#asdndz-image_image__icon-container {
-  display: flex;
+.navbar ul {
+  padding-top: 0.75em;
 }
 
-.direct-upload.direct-upload--pending {
-  display: flex;
-  margin-top: 10px;
+.card-columns {
+  --auto-grid-min-size: 15em;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size), 1fr)
+  );
+  gap: 2em;
 }
 
-.direct-upload__filename {
-  background: #333;
-  color: #fff;
-  padding: 0.3rem 0.5rem;
-  border-radius: 2px 0 0 2px;
-  padding-right: 0.3rem;
+.gallery--image {
+  /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+  filter: gray; /* IE5+ */
+  -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+  -webkit-transition: all 0.8s ease-in-out;
+  max-width: 100%;
 }
 
-.direct-upload__remove {
-  background: #333;
-  padding: 0.3rem 0.5rem;
-  border-radius: 0 2px 2px 0;
-  color: #fff;
-  margin-top: 10px;
+.gallery--image:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.01);
+}
+
+.card {
+  width: 200px;
 }

@@ -3,12 +3,12 @@
 <div class="card-columns">
   <% @images.each do |image| %>
     <div class="card">
-      <div class="card-body p-1">
-        <%= image_tag image.image, loading: "lazy", width: "200px", class: 'd-block w-100 mb-1'%>
-        <p><%= link_to "View Image", image_path(image.id), class: 'btn btn-secondary stretched-link' %></p>
+      <div class="card-body flex">
+        <%= image_tag image.image, loading: "lazy", class: "gallery--image" %>
         <p class="my-1"><%= image.description %></p>
+        <%= link_to "View Image", image_path(image.id), class: 'btn btn-primary' %>
         <% if image.user == current_user %>
-          <%= button_to "Delete", image_path(image.id), method: :delete %>
+          <%= button_to "", image_path(image.id), method: :delete, class: "fa fa-trash" %>
         <% end %> 
       </div>
     </div>

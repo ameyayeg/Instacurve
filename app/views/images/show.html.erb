@@ -4,15 +4,13 @@
   <div class="col-md-9">
     <div class="card">
       <div class="card-body p-2">
-        <%= image_tag @image.image, loading: "lazy", width: "500px" %>
+        <%= image_tag @image.image, width: "400px" %>
       </div>
-
     </div>
   </div>
 
   <div class="col-md-3">
     <%= link_to @image.user.full_name, profile_path(@image.user.username) %>
-
     <p class="border-top mt-3 py-2">
       <% if @image.description.present? %>
         <%= @image.description %> -

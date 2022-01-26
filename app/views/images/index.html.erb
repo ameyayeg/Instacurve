@@ -2,12 +2,10 @@
 
 <div class="card-columns">
   <% @images.each do |image| %>
-    <div class="card">
-      <div class="card-body flex">
+    <div class="card flex">
         <%= image_tag image.image, loading: "lazy", class: "gallery--image"%>
         <p class="my-1"><%= image.description %></p>
         <%= link_to "View Image", image_path(image.id), class: "btn btn-primary" %>
-      </div>
     </div>
   <% end %>
 </div>

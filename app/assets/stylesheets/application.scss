@@ -9,6 +9,7 @@
 
 body {
   font-family: 'Karla', sans-serif;
+  padding-bottom: 1em;
 }
 
 .flex {
@@ -45,13 +46,13 @@ body {
 }
 
 .card-columns {
-  --auto-grid-min-size: 15em;
+  --auto-grid-min-size: 10em;
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
     minmax(var(--auto-grid-min-size), 1fr)
   );
-  gap: 2em;
+  gap: 5em;
 }
 
 .gallery--image {
@@ -59,8 +60,8 @@ body {
   filter: gray; /* IE5+ */
   -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
   -webkit-transition: all 0.8s ease-in-out;
-  width: 100%;
-  overflow: hidden;
+  max-width: 100%;
+  min-height: 50%;
 }
 
 .gallery--image:hover {
@@ -71,6 +72,8 @@ body {
 
 .card {
   width: 200px;
+  justify-content: space-around;
+  height: 300px;
 }
 
 .fa {

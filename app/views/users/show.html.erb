@@ -2,15 +2,13 @@
 
 <div class="card-columns">
   <% @images.each do |image| %>
-    <div class="card">
-      <div class="card-body flex">
+    <div class="card flex">
         <%= image_tag image.image, loading: "lazy", class: "gallery--image" %>
         <p class="my-1"><%= image.description %></p>
         <%= link_to "View Image", image_path(image.id), class: 'btn btn-primary' %>
         <% if image.user == current_user %>
           <%= button_to "", image_path(image.id), method: :delete, class: "fa fa-trash" %>
         <% end %> 
-      </div>
     </div>
   <% end %>
 </div>

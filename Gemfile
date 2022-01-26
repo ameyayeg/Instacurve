@@ -73,3 +73,4 @@ end
 
 gem 'devise'
 gem 'active_storage_drag_and_drop'
+gem 'pg'

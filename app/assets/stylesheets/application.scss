@@ -59,7 +59,8 @@ body {
   filter: gray; /* IE5+ */
   -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
   -webkit-transition: all 0.8s ease-in-out;
-  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .gallery--image:hover {
@@ -70,4 +71,17 @@ body {
 
 .card {
   width: 200px;
+}
+
+.fa {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-top: 1em;
+  border: none;
+  transition: all 1s ease;
+}
+
+.fa:hover {
+  background-color: #337ab7;
 }

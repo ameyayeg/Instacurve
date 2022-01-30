@@ -4,10 +4,10 @@ This is a Rails 7 image gallery application with CRUD capabilities.
 
 Main characteristics:
 
-Postgres database
-Devise gem for authentication
-Bootstrap styling
-Active storage
+1. Postgres database
+2. Devise gem for authentication
+3. Bootstrap styling
+4. Active storage
 
 To install:
 

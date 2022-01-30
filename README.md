@@ -1,24 +1,19 @@
-# README
+# INSTACURVE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails 7 image gallery application with CRUD capabilities.
 
-Things you may want to cover:
+Main characteristics:
 
-* Ruby version
+Postgres database
+Devise gem for authentication
+Bootstrap styling
+Active storage
 
-* System dependencies
+To install:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+clone the project
+run bundle install
+run rake db:create
+run rake db:migrate
+run rake db:seed for basic data and a basic user
+run rails s for running it in development mode

@@ -9,7 +9,7 @@ Main characteristics:
 3. Bootstrap styling
 4. Active storage
 
-To install locally, make sure you have Ruby 2.7.2, Rails 7.0.1 and Postgres installed on your computer.
+To install locally, make sure you have Ruby 2.7.2, Rails 7.0.1 and Postgres installed on your computer. Then:
 
 * clone the project
 * run ```bundle install```
